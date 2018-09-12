@@ -19,5 +19,9 @@ public class Main {
         list.add(map);
         list.add(map);
         System.out.println(list);
+
+        StringBuffer s=new StringBuffer();
+        s.append("abc");
+        System.out.println(s.reverse());
     }
 }
