@@ -12,5 +12,6 @@
     <orderEntry type="library" name="poi-3.17" level="project" />
     <orderEntry type="library" name="json-lib-2.4-jdk151" level="project" />
     <orderEntry type="library" name="commons-beanutils-1.9.3" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.12" level="project" />
   </component>
 </module>
