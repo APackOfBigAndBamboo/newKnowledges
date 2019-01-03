@@ -2,12 +2,12 @@ package testdemo.ThreadDemo;
 
 
 /**
- * @Derscription 经典多线程试题，加减法运算，四个线程对某个数字进行交叉运算
- * @auther David
+ * TODO 经典多线程试题，加减法运算，四个线程对某个数字进行交叉运算
+ * @author David
  * @date 2018-09-03 16:20
- * @Version 1.o
+ * @version 1.o
  */
-public class jiajianfaDemo {
+public class JiaJianFaDemo {
     public static void main(String[] args) {
         Resource re = new Resource();
         SubThread sub = new SubThread(re);
@@ -23,7 +23,7 @@ public class jiajianfaDemo {
 class AddThread implements Runnable {
     private Resource resource;
 
-    public AddThread(Resource resource) {
+    AddThread(Resource resource) {
         this.resource = resource;
     }
 
@@ -42,7 +42,7 @@ class AddThread implements Runnable {
 class SubThread implements Runnable {
     private Resource resource;
 
-    public SubThread(Resource resource) {
+    SubThread(Resource resource) {
         this.resource = resource;
     }
 
@@ -62,7 +62,7 @@ class Resource {
     private int num = 0;
     private boolean flag = true;
 
-    public synchronized void add() throws Exception {
+    synchronized void add() throws Exception {
         if (this.flag == false) {
             super.wait();
         }
@@ -73,7 +73,7 @@ class Resource {
         super.notifyAll();
     }
 
-    public synchronized void sub() throws Exception {
+    synchronized void sub() throws Exception {
         if (this.flag == true) {
             super.wait();
         }

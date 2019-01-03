@@ -1,24 +1,26 @@
 package testdemo.ThreadDemo;
 
 /**
- * @Derscription 多线程模拟抢票机制
- * @auther David
+ * TODO 多线程模拟抢票机制
+ * @author David
  * @date 2018-09-03 9:49
- * @Version 1.o
+ * @version 1.o
  */
 class MyThread implements Runnable {
-    private int ticket = 10;
+    private int ticket = 100;
 
     @Override
     public void run() {
-        while (this.sale()) {//每一次只允许一个县城进行访问
+        //每一次只允许一个县城进行访问
+        while (this.sale()) {
         }
     }
 
     public synchronized boolean sale() {
         if (ticket > 0) {
             try {
-                Thread.sleep(1);//模拟网络延迟
+                //模拟网络延迟
+                Thread.sleep(0);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -31,6 +33,9 @@ class MyThread implements Runnable {
     }
 }
 
+/**
+ * @author David
+ */
 public class MaiPiao {
     public static void main(String[] args) {
         MyThread mt = new MyThread();

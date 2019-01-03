@@ -2,10 +2,10 @@ package testdemo.ThreadDemo;
 
 
 /**
- * @Derscription 生产者消费Demo
- * @auther David
+ * TODO  生产者消费Demo
+ * @author  David
  * @date 2018-09-03 11:23
- * @Version 1.o
+ * @version 1.o
  */
 public class ThreadDemo {
     public static void main(String[] args) {
@@ -58,7 +58,8 @@ class Producer implements Runnable {
 class Message {
     private String title;
     private String content;
-    private boolean flag = true;//为flase时允许set//为true时允许get
+    //为flase时允许set//为true时允许get
+    private boolean flag = true;
 
     public synchronized void get() {
         if (this.flag == true) {

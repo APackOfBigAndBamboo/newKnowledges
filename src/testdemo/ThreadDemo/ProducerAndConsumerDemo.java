@@ -1,11 +1,11 @@
 package testdemo.ThreadDemo;
 
 /**
- * @Derscription 生产者与消费者多线程Demo 生产一个消费一个生产一个消费一个 并记录生产数量
+ * TODO 生产者与消费者多线程Demo 生产一个消费一个生产一个消费一个 并记录生产数量
  * 公司company 生产apple  people吃apple
- * @auther David
+ * @author David
  * @date 2018-09-04 16:48
- * @Version 1.o
+ * @version 1.o
  */
 public class ProducerAndConsumerDemo {
     public static void main(String[] args) {
@@ -21,6 +21,7 @@ class Company implements Runnable{
         this.source=source;
     }
 
+    @Override
     public void run() {
 
         for (int i=0;i<50;i++){
@@ -37,7 +38,7 @@ class People implements Runnable{
     public People(Source source){
         this.source=source;
     }
-
+    @Override
     public void run() {
 
         for (int i=0;i<50;i++){

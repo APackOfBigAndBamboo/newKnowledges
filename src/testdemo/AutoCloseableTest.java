@@ -1,16 +1,15 @@
 package testdemo;
 
 /**
- * @Derscription TODO
- * @auther David
+ * TODO
+ * @author David
  * @date 2018-09-12 17:23
- * @Version 1.o
+ * @version 1.o
  */
 public class AutoCloseableTest {
 
     public static void main(String [] args){
         try(ConnectionLock lock = new ConnectionInnerLock()){
-
             //do something lock
             System.out.println("doing business...");
         } catch (Exception e) {
