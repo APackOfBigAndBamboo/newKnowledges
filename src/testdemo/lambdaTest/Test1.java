@@ -5,10 +5,9 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * @Derscription TODO
- * @auther David
+ * @author David
  * @date 2018-08-31 9:57
- * @Version 1.o
+ * @version 1.o
  */
 public class Test1 {
     public static void main(String[] args) {
@@ -25,12 +24,7 @@ public class Test1 {
                 "Richard Gasquet", "John Isner"};
 
          // 1.1 使用匿名内部类根据 name 排序 players
-        Arrays.sort(players, new Comparator<String>() {
-            @Override
-            public int compare(String s1, String s2) {
-                return (s1.compareTo(s2));
-            }
-        });
+        Arrays.sort(players, (s1, s2) -> (s1.compareTo(s2)));
 
         for (String a : players) {
             System.out.println(a);

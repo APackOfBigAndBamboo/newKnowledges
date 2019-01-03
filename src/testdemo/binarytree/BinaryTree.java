@@ -3,10 +3,9 @@ package testdemo.binarytree;
 import java.util.LinkedList;
 
 /**
- * @Derscription TODO
- * @auther David
+ * @author David
  * @date 2018/7/26 11:12
- * @Version 1.o
+ * @version 1.o
  */
 /*
  * 先序创建、输出 二叉树
@@ -16,62 +15,64 @@ import java.util.LinkedList;
  * 遍历参考自：http://blog.csdn.net/sjf0115/article/details/8645991
  */
 
-public class BinaryTree<T> {
-    /*
+ class BinaryTree<T> {
+    /**
      * 先序创建二叉树
      * 返回：根节点
+     * @param  treeData 根节点
      */
-    public TreeNode<T> creatBinaryPre(LinkedList<T> treeData) {
+     TreeNode<T> createBinaryPre(LinkedList<T> treeData) {
         TreeNode<T> root = null;
         T data = treeData.removeFirst();
         if (data != null) {
-            root = new TreeNode<T>(data, null, null);
-            root.left = creatBinaryPre(treeData);
-            root.right = creatBinaryPre(treeData);
+            root = new TreeNode<>(data, null, null);
+            root.left = createBinaryPre(treeData);
+            root.right = createBinaryPre(treeData);
         }
         return root;
     }
 
-    /*
+    /**
      * 先序遍历二叉树（递归）
      */
-    public void PrintBinaryTreePreRecur(TreeNode<T> root) {
+     void printBinaryTreePreRecur(TreeNode<T> root) {
         if (root != null) {
             System.out.print(root.data);
-            PrintBinaryTreePreRecur(root.left);
-            PrintBinaryTreePreRecur(root.right);
+            printBinaryTreePreRecur(root.left);
+            printBinaryTreePreRecur(root.right);
         }
     }
 
-    /*
+    /**
      * 中序遍历二叉树（递归）
      */
-    public void PrintBinaryTreeMidRecur(TreeNode<T> root) {
+     void printBinaryTreeMidRecur(TreeNode<T> root) {
         if (root != null) {
-            PrintBinaryTreeMidRecur(root.left);
+            printBinaryTreeMidRecur(root.left);
             System.out.print(root.data);
-            PrintBinaryTreeMidRecur(root.right);
+            printBinaryTreeMidRecur(root.right);
         }
     }
 
-    /*
+    /**
      * 后序遍历二叉树（递归）
      */
-    public void PrintBinaryTreeBacRecur(TreeNode<T> root) {
+     void printBinaryTreeBacRecur(TreeNode<T> root) {
         if (root != null) {
-            PrintBinaryTreeBacRecur(root.left);
-            PrintBinaryTreeBacRecur(root.right);
+            printBinaryTreeBacRecur(root.left);
+            printBinaryTreeBacRecur(root.right);
             System.out.print(root.data);
         }
     }
 
-    /*
+    /**
      * 先序遍历二叉树（非递归）
      * 思路：对于任意节点T，访问这个节点并压入栈中，然后访问节点的左子树，
      *      遍历完左子树后，取出栈顶的节点T，再先序遍历T的右子树
      */
-    public void PrintBinaryTreePreUnrecur(TreeNode<T> root) {
-        TreeNode<T> p = root;//p为当前节点
+     void printBinaryTreePreUnRecur(TreeNode<T> root) {
+         //p为当前节点
+        TreeNode<T> p = root;
         LinkedList<TreeNode> stack = new LinkedList<>();
         //栈不为空时，或者p不为空时循环
         while (p != null || !stack.isEmpty()) {
@@ -92,14 +93,15 @@ public class BinaryTree<T> {
         }
     }
 
-    /*
+    /**
      * 中序遍历二叉树（非递归）
      *
      * 思路：先将T入栈，遍历左子树；遍历完左子树返回时，栈顶元素应为T，
      *       出栈，访问T->data，再中序遍历T的右子树。
      */
-    public void PrintBinaryTreeMidUnrecur(TreeNode<T> root) {
-        TreeNode<T> p = root;//p为当前节点
+     void printBinaryTreeMidUnRecur(TreeNode<T> root) {
+        //p为当前节点
+        TreeNode<T> p = root;
         LinkedList<TreeNode> stack = new LinkedList<>();
 
         //栈不为空时，或者p不为空时循环
@@ -121,16 +123,16 @@ public class BinaryTree<T> {
         }
     }
 
-    /*
+    /**
      * 后序遍历二叉树（非递归）
      *
      */
-    public void PrintBinaryTreeBacUnrecur(TreeNode<T> root) {
+     void printBinaryTreeBacUnRecur(TreeNode<T> root){
         class NodeFlag<T> {
-            TreeNode<T> node;
-            char tag;
+           private TreeNode<T> node;
+           private char tag;
 
-            public NodeFlag(TreeNode<T> node, char tag) {
+            private NodeFlag(TreeNode<T> node, char tag) {
                 super();
                 this.node = node;
                 this.tag = tag;
@@ -148,7 +150,8 @@ public class BinaryTree<T> {
                 p = p.left;
             }
             //左右子树访问完毕访问根节点
-            while (!stack.isEmpty() && stack.getFirst().tag == 'R') {
+            char temp='R';
+            while (!stack.isEmpty() && stack.getFirst().tag == temp) {
                 bt = stack.pop();
                 System.out.print(bt.node.data);
             }
@@ -162,10 +165,10 @@ public class BinaryTree<T> {
         }
     }
 
-    /*
+    /**
      * 层次遍历二叉树（非递归）
      */
-    public void PrintBinaryTreeLayerUnrecur(TreeNode<T> root) {
+     void printBinaryTreeLayerUnRecur(TreeNode<T> root) {
         LinkedList<TreeNode> queue = new LinkedList<>();
         TreeNode<T> p;
         queue.push(root);
@@ -181,11 +184,11 @@ public class BinaryTree<T> {
 }
 
 class TreeNode<T> {
-    public T data;
-    public TreeNode<T> left;
-    public TreeNode<T> right;
+     T data;
+     TreeNode<T> left;
+     TreeNode<T> right;
 
-    public TreeNode(T data, TreeNode<T> left, TreeNode<T> right) {
+     TreeNode(T data, TreeNode<T> left, TreeNode<T> right) {
         this.data = data;
         this.left = left;
         this.right = right;

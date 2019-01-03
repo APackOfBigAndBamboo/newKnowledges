@@ -1,10 +1,10 @@
 package testdemo.ThreadDemo;
 
 /**
- * @Derscription 优雅的停止线程和 守护线程 demo
- * @auther David
+ * TODO: 2019-01-03 优雅的停止线程和 守护线程 demo
+ * @author David
  * @date 2018-09-03 14:48
- * @Version 1.o
+ * @version 1.o
  */
 public class ElegantStopThread {
     private static boolean flag = true;
@@ -30,7 +30,7 @@ public class ElegantStopThread {
                 System.out.println(Thread.currentThread().getName() + "正在运行，num=" + i);
             }
         }, "守护线程");
-        daemonThread.setDaemon(true);
+        daemonThread.setDaemon(flag);
         userThread.start();
         daemonThread.start();
         //Thread.sleep(200);

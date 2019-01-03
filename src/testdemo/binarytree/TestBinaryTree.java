@@ -4,10 +4,9 @@ package testdemo.binarytree;
 import java.util.LinkedList;
 
 /**
- * @Derscription TODO
- * @auther David
+ * @author David
  * @date 2018/7/26 11:13
- * @Version 1.o
+ * @version 1.o
  */
 public class TestBinaryTree {
     public static void main(String[] args) {
@@ -37,30 +36,30 @@ public class TestBinaryTree {
         tree.add(null);
         tree.add(null);
 
-        TreeNode<Character> root = binaryTree.creatBinaryPre(tree);
+        TreeNode<Character> root = binaryTree.createBinaryPre(tree);
 
         //先序遍历（递归）
-        binaryTree.PrintBinaryTreePreRecur(root);
+        binaryTree.printBinaryTreePreRecur(root);
         System.out.println();
         //中序遍历（递归）
-        binaryTree.PrintBinaryTreeMidRecur(root);
+        binaryTree.printBinaryTreeMidRecur(root);
         System.out.println();
         //后序遍历（递归）
-        binaryTree.PrintBinaryTreeBacRecur(root);
+        binaryTree.printBinaryTreeBacRecur(root);
         System.out.println();
 
 
         //先序遍历（非递归）
-        binaryTree.PrintBinaryTreePreUnrecur(root);
+        binaryTree.printBinaryTreePreUnRecur(root);
         System.out.println();
         //中序遍历（非递归）
-        binaryTree.PrintBinaryTreeMidUnrecur(root);
+        binaryTree.printBinaryTreeMidUnRecur(root);
         System.out.println();
         //后序遍历（非递归）
-        binaryTree.PrintBinaryTreeBacUnrecur(root);
+        binaryTree.printBinaryTreeBacUnRecur(root);
         System.out.println();
         //层次遍历（非递归）
-        binaryTree.PrintBinaryTreeLayerUnrecur(root);
+        binaryTree.printBinaryTreeLayerUnRecur(root);
         System.out.println();
 
 
