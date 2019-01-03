@@ -1,7 +1,7 @@
 package testdemo.ThreadDemo;
 
 /**
- * TODO: 2019-01-03 优雅的停止线程和 守护线程 demo
+ * TODO: 优雅的停止线程和 守护线程 demo
  * @author David
  * @date 2018-09-03 14:48
  * @version 1.o
